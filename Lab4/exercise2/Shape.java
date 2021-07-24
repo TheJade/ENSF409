@@ -1,16 +1,30 @@
 
-abstract class Shape {
+abstract class Shape implements Comparable <Shape>{
 	protected Point origin;
 	protected Text name;
 	abstract protected Double area();
 	abstract protected Double perimeter();
 	abstract protected Double volume();
+
 	
 	protected Shape(Double x_origin, Double y_origin, String name, Colour colour){
 		
 		origin = new Point(x_origin,y_origin, colour);
 		this.name = new Text(name);
 	}
+
+	public int compareTo(Shape the_shape){  
+		if(the_shape instanceof Rectangle ) {
+			return 0; 
+		} 
+		else if(the_shape instanceof Circle)  {
+			return 1;  
+		}
+		else  {
+			return 2;  
+		}
+			
+	}  
 
 
 	protected Point  getOrigin()   {

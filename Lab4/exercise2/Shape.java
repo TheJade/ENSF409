@@ -13,18 +13,31 @@ abstract class Shape implements Comparable <Shape>{
 		this.name = new Text(name);
 	}
 
-	public int compareTo(Shape the_shape){  
-		if(the_shape instanceof Rectangle ) {
-			return 0; 
+	//	public int compareTo(Shape the_shape){	
+	//		if(the_shape instanceof Circle) {	// always true for some reason
+	//			return 1; 
+	//		} 
+	//		else if(the_shape instanceof Rectangle)  {	//can't get the order right for some reason
+	//			return 3;  
+	//		}
+	//		else  {
+	//			return 2;  
+	//		}
+	//			
+	//	}  
+
+	public int compareTo(Shape the_shape){	
+		if((the_shape.getName().charAt(0)) == "P".charAt(0)) {	// always true for some reason
+			return 3;
 		} 
-		else if(the_shape instanceof Circle)  {
-			return 1;  
-		}
-		else  {
+		else if(the_shape.getName().charAt(0) == "C".charAt(0))  {	//can't get the order right for some reason
 			return 2;  
 		}
+		else  {
+			return 1;  
+		}
 			
-	}  
+	} 
 
 
 	protected Point  getOrigin()   {

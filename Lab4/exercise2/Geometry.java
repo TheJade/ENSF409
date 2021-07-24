@@ -45,7 +45,7 @@ public class Geometry{
         
         Iterator <Shape> it = demo.shapes.iterator();
         while(it.hasNext()){
-        	demo.calculator(it.next());
+            demo.calculator(it.next());
         }
          
          
@@ -62,6 +62,10 @@ public class Geometry{
             System.out.println(i.next());
         }
 
+    }
+
+    public void calculator(Shape s) {
+        System.out.printf("The area, perimeter, and volume of %s are: %.2f, %.2f, %.2f\n", s.getName(), s.area(), s.perimeter(), s.volume());
     }
 
 

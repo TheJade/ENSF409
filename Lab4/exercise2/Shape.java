@@ -26,18 +26,44 @@ abstract class Shape implements Comparable <Shape>{
 	//			
 	//	}  
 
-	public int compareTo(Shape the_shape){	
-		if((the_shape.getName().charAt(0)) == "P".charAt(0)) {	// always true for some reason
-			return 3;
+	// public int compareTo(Shape the_shape){
+	// 	if(the_shape.getName().charAt(0) == "C".charAt(0)) {	// always true for some reason
+	// 		return 1; 
+	// 	} 
+	// 	else if(the_shape.getName().charAt(0) == "P".charAt(0))  {	//can't get the order right for some reason
+	// 		return 3;  
+	// 	}
+	// 	else  {
+	// 		return 2;  
+	// 	}
+	// }
+
+	public int compareTo(Shape the_shape){
+		if(the_shape.getName().charAt(0) == "C".charAt(0)) {	// always true for some reason
+			return 1; 
 		} 
-		else if(the_shape.getName().charAt(0) == "C".charAt(0))  {	//can't get the order right for some reason
-			return 2;  
+		else if(the_shape.getName().charAt(0) == "R".charAt(0))  {	//can't get the order right for some reason
+			return -1;  
 		}
 		else  {
 			return 1;  
 		}
+	}
 			
-	} 
+	
+	//	public int compareTo(Shape the_shape){
+//	
+	//		//System.out.print("!!!!!!!! " + the_shape.getName());
+	//		//System.out.println(the_shape.getName().charAt(0) == "C".charAt(0));
+//	
+	//		if(the_shape.getName() == "C1") { return 0;} 
+	//		else if(the_shape.getName() == "C2")  { return 1; }
+	//		else if(the_shape.getName() == "P1")  { return 2; }
+	//		else if(the_shape.getName() == "P2")  { return 3; }
+	//		else if(the_shape.getName() == "R1")  { return 4; }
+	//		else  {	return 5; }
+	//			
+	//	} 
 
 
 	protected Point  getOrigin()   {

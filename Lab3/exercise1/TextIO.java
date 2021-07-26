@@ -16,7 +16,7 @@ public class TextIO {
 
     /**
      * this goes through the .txt doc and populate the tool objects to so that the program can use them
-     * @param tools reads the best
+     * @param tools 
      * @throws IOException
      */
 

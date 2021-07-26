@@ -8,5 +8,7 @@ public class Inventory {
     public Inventory(){
         System.out.println("hi" + tools[0].getID());
     }
+
+    
     
 }

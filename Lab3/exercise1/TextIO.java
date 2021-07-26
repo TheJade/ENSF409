@@ -1,14 +1,24 @@
+/**
+ * this class manages the read and write of the .txt documents
+ */
+
 import java.io.*;
 import java.lang.*;
 
-public class IOtext {
+public class TextIO {
     
     Tool[] tools = new Tool[5]; //modify after testing
-    public IOtext(Tool[] inv_tools){
+    public TextIO(Tool[] inv_tools){
         tools = inv_tools;
         tools[0] = new Tool("a", "b", "c", "d", "e", "f", "g", "h");
         System.out.println(tools[0].getID());
     }
+
+    /**
+     * this goes through the .txt doc and populate the tool objects to so that the program can use them
+     * @param tools reads the best
+     * @throws IOException
+     */
 
     public void readItems(Tool[] tools) throws IOException{
 
@@ -174,4 +184,4 @@ public class IOtext {
     }
     
     
-}   // end of IOtext
+}   // end of textIO

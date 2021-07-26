@@ -1,7 +1,21 @@
-package Lab3;
+/**
+ * Tool
+ */
 
 public class Tool {
     private String id, name, quantity, price, supplier_id, company, address, sales_contact;
+
+    /**
+     * Tool will contain the info for each tool in the shop
+     * @param id
+     * @param name
+     * @param quantity
+     * @param price
+     * @param supplier_id
+     * @param company
+     * @param address
+     * @param sales_contact
+     */
 
     public Tool(String a , String b, String c, String d, String e, String f, String g, String h){
         id = a;
@@ -13,7 +27,10 @@ public class Tool {
         address = g;
         sales_contact = h;
     }
-
+    /**
+     * used to retrieve the id of the tool object
+     * @return id of the tool
+     */
     public String getID() { return id; }
     public String getName() { return name; }
     public String getQuantity() { return quantity; }
@@ -23,6 +40,11 @@ public class Tool {
     public String getAddress() { return address; }
     public String getSalesContact() { return sales_contact; }
 
+    /**
+     * sets the value of the 
+     * @param info to be replaced
+     * @param value the info is being replaced by
+     */
     public void setValue(int index, String str) { 
         if(index == 0){id=str;}
         if(index == 1){name=str;}

@@ -7,10 +7,11 @@ public class SimpleThread implements Runnable{	//<----modified to Runnable
 	public void run() {
 		for(int i = 0; i<10; i++){
 			try {
-			System.out.println(resource.increment());
-			
-			Thread.sleep(1);
-			
+				synchronized(resource){
+					System.out.println(resource.increment());
+
+					Thread.sleep(1);
+				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

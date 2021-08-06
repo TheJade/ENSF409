@@ -2,9 +2,10 @@
 
 import java.awt.*;
 import javax.swing.*;
+import java.io.*;
 
 public class GUI extends JFrame{
-	JButton b1, b2, b3;
+	JButton b1, b2, b3, b4;
 	JPanel p;
 	BinSearchTree tree;
 
@@ -28,41 +29,73 @@ public class GUI extends JFrame{
 	}
 
 	public void mainMenuGUI(){
-		p = new JPanel(new GridBagLayout());
-		b1 = new JButton ("OK");
-		b2 = new JButton ("Cancel");
 
-		GridBagConstraints c = new GridBagConstraints();
+		try {
+			p = new JPanel(new GridBagLayout());
+			b1 = new JButton ("Insert");
+			b2 = new JButton ("Find");
+			b3 = new JButton ("Browse");
+			b4 = new JButton ("Create Tree From File");
 
-		c.gridx = 0;
-		c.gridy = 1;
-		
-		p.add(b1, c); 
-		c.gridx = 1;
-		c.gridy = 1;  
-		p.add(b2, c);
+			GridBagConstraints c = new GridBagConstraints();
 
-		this.add(p, BorderLayout.SOUTH);
+			c.insets = new Insets(10, 10, 10, 10);
+			c.gridx = 0;
+			c.gridy = 1;
+			p.add(b1, c); 
 
-		//num = Integer.parseInt(JOptionPane.showInputDialog("Enter the file name:"));
+			c.gridx = 1;
+			c.gridy = 1;  
+			p.add(b2, c);
 
-		//b3 = new JButton ("jade was here");	//testing
-		//this.add(b3);
+			c.gridx = 3;
+			c.gridy = 1;
+			p.add(b3, c); 
+			
+			c.gridx = 4;
+			c.gridy = 1;  
+			p.add(b4, c);
 
-        JTextArea area=new JTextArea("Welcome to javatpoint\n\n\n\n\n\n\n\njade\n\n\n\n\1\n\n\n2\n\n\2\n\n\3\n\n\4\n\n\5");  
-        
-		JScrollPane scrollPane = new JScrollPane(area);
-		
-		area.setBounds(10,30, 200,200);
-		this.add(scrollPane);
-		
-		
-		setVisible(true);
-		setBounds(300,300, 200,200);
-		//pack();
-		
-		b1.addActionListener(new B1Listener (this));
-		b2.addActionListener(new B2Listener (this));
+			this.add(p, BorderLayout.SOUTH);
+
+			//num = Integer.parseInt(JOptionPane.showInputDialog("Enter the file name:"));
+
+			
+				Node root = tree.getRoot();
+
+				StringWriter temp_string = new StringWriter();
+				PrintWriter writer = new PrintWriter(temp_string);
+				tree.print_tree(root, writer);
+				JTextArea area = new JTextArea(temp_string.toString());	//can't figure out this line
+
+				writer.close();
+			
+
+        	//JTextArea area=new JTextArea("Welcome\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12");  
+			
+			area.setEditable(false);
+			JScrollPane scrollPane = new JScrollPane(area);
+			
+			this.add(scrollPane);
+			
+			
+			setVisible(true);
+			setBounds(300,300, 500,200);
+			//pack();
+			
+			b1.addActionListener(new B1Listener (this));
+			b2.addActionListener(new B2Listener (this));
+			b3.addActionListener(new B1Listener (this));
+			b4.addActionListener(new B2Listener (this));
+		}
+		catch (FileNotFoundException e){
+			System.out.println("An error occurred. File not found.");
+            e.printStackTrace();
+		}
+		catch (IOException i){
+			System.out.println("An error occurred. IOException.");
+            i.printStackTrace();
+		}
 	}
 	//public static void main (String [] args) {
 	//	

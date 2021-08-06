@@ -142,4 +142,23 @@ class BinSearchTree {
 		if (cur.right!=null)
 			print_tree(cur.right,out);
 	} 
+
+	//	public void print_tree(Node cur) throws IOException {
+	//		if (cur.left!=null)
+	//			print_tree(cur.left);
+	//		String s = cur.data.id+"        "+cur.data.faculty+"     "+
+    //	                             cur.data.major+ "       "+cur.data.year + "\n";
+	//		//out.println(s);
+	//		System.out.println(s);
+	//		if (cur.right!=null)
+	//			print_tree(cur.right);
+	//	} 
+
+	/**
+	 * 
+	 * @return	- root
+	 */
+	public Node getRoot(){
+		return root;
+	}
 }

@@ -14,7 +14,7 @@ public class B1Listener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
-			System.out.println("Submit");
+			System.out.println("1");
 	}
 
 }

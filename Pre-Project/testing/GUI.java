@@ -85,8 +85,8 @@ public class GUI extends JFrame{
 			
 			b1.addActionListener(new B1Listener (this));
 			b2.addActionListener(new B2Listener (this));
-			b3.addActionListener(new B1Listener (this));
-			b4.addActionListener(new B2Listener (this));
+			b3.addActionListener(new B3Listener (this));
+			b4.addActionListener(new B4Listener (this));
 		}
 		catch (FileNotFoundException e){
 			System.out.println("An error occurred. File not found.");

@@ -11,11 +11,13 @@ public class MainLoop {
         BinSearchTree tree = new BinSearchTree();
 
         while (true) {
+            System.out.println(state);
             if (state == 0){
                 //wait state will be in main menu
                 continue;
             }
             if (state == 1){
+                System.out.println("In state 1...");
                 GUI myFrame = new GUI("Home Menu", tree);
                 myFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 state = 0;

@@ -138,7 +138,7 @@ class BinSearchTree {
 		String s = cur.data.id+"        "+cur.data.faculty+"     "+
                                  cur.data.major+ "       "+cur.data.year + "\n";
 		out.println(s);
-		System.out.println(s);
+		//System.out.println(s);
 		if (cur.right!=null)
 			print_tree(cur.right,out);
 	} 
@@ -155,7 +155,7 @@ class BinSearchTree {
 	//	} 
 
 	/**
-	 * 
+	 * Note I added this function to get the root of the binary search tree, probably a easy way to do it now that I think about it. could do "tree.root"
 	 * @return	- root
 	 */
 	public Node getRoot(){

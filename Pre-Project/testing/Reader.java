@@ -1,9 +1,23 @@
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
-
+/**
+ * This class just contains the readFile functionality of the program.
+ * This is to be utilized once the .txt file name in inserted to populate the binary tree
+ * 
+ * @author Tsenguun Ulambayar, Jade Fjestad
+ * @since August 5th, 2021
+ * @version 1.0
+ */
 public class Reader {
     
+    /**
+     * This is the only method needed in this class. 
+     * readFile method will populate the tree using the insert functionality of the BinSearchTree class.
+     * Correct formatting of the .txt file is important 
+     * @param fileName name of the file to populate the binary tree
+     * @param tree the tree to be populated by the data
+     */
     public static void readFile(String fileName, BinSearchTree tree) {
         try {
             File myObj = new File(fileName);
@@ -35,7 +49,7 @@ public class Reader {
                 tree.insert(id, faculty, major, year);
 
                 //testing
-                //  Node node = new Node("63459", "EN", "ENGO", "3");
+                //  Node node = new Node("63459", "EN", "ENGO", "3");   //testing
 //  
                 //  print_tree(node);   
 
@@ -50,7 +64,7 @@ public class Reader {
                 e.printStackTrace();
             }
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) {    //for testing
         //Reader.readFile("input.txt");
     }
 

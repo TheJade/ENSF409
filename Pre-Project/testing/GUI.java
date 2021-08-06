@@ -135,7 +135,10 @@ public class GUI extends JFrame{
 			Node found = tree.find(root, idName);
 			JFrame frame = new JFrame("Student Info"); 
 			JLabel label = new JLabel(found.toString());
+
+
 			frame.add(label);
+			frame.setBounds(620,300, 300,200);
 
 			frame.setVisible(true);
 		}

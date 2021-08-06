@@ -11,14 +11,14 @@ public class GUI extends JFrame{
 
 	String txtName;
 	
-	public GUI (String title, BinSearchTree tree ) {
+	public GUI (String title){//, BinSearchTree tree ) {
 		super (title);
 		//listener = new MyListener (this);
 		txtName= JOptionPane.showInputDialog("Please enter file name (i.e. input.txt):");
 
 		new Reader();
 		
-		Reader.readFile(txtName, tree);
+		Reader.readFile(txtName);//, tree);
 		//setLayout(new BorderLayout());
 
 		p = new JPanel(new GridBagLayout());

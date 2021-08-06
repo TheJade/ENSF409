@@ -4,7 +4,7 @@ import java.util.Scanner; // Import the Scanner class to read text files
 
 public class Reader {
     
-    public static void readFile(String fileName, BinSearchTree tree) {
+    public static void readFile(String fileName) { //, BinSearchTree tree) {
         try {
             File myObj = new File(fileName);
             Scanner myReader = new Scanner(myObj);
@@ -32,7 +32,7 @@ public class Reader {
 
                 //add the thing to binsearchTree here
 
-                tree.insert(id, faculty, major, year);
+                // tree.insert(id, faculty, major, year);
 
                 //testing
                 //  Node node = new Node("63459", "EN", "ENGO", "3");

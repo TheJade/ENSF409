@@ -25,7 +25,7 @@ public class MainLoop {
         //}
             BinSearchTree tree = new BinSearchTree();
         
-            GUI myFrame = new GUI("Home Menu", tree);
+            GUI myFrame = new GUI("Home Menu");//, tree);
             myFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         }
 

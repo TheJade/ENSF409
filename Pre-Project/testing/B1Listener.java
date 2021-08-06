@@ -14,7 +14,8 @@ public class B1Listener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
-			System.out.println("1");
+			System.out.println("Going to state 3...");
+			MainLoop.state = 3;
 	}
 
 }

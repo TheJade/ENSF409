@@ -147,6 +147,21 @@ public class GUI extends JFrame{
             e.printStackTrace();
 		}
 	}
+
+	public void insertGUI(){
+
+		String idName= JOptionPane.showInputDialog("Please enter student id (i.e. 62111):");
+		String faculty= JOptionPane.showInputDialog("Please enter faculty (i.e. CC):").toUpperCase();
+		String major= JOptionPane.showInputDialog("Please enter major (i.e. SCIE):").toUpperCase();
+		String year= JOptionPane.showInputDialog("Please enter year (i.e. 2):").toUpperCase();
+		try{
+			tree.insert(idName, faculty, major, year);
+		}
+		catch (Exception e){
+			System.out.println("An error occurred.");
+            e.printStackTrace();
+		}
+	}
 	
 
 }

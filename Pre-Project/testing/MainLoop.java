@@ -28,6 +28,13 @@ public class MainLoop {
                 myFrame.findGUI();
                 state = 0;
             }
+            if (state ==3){
+                System.out.println("In state 3...");
+                myFrame.insertGUI();
+                //myFrame.setVisible(false);  //hides the previous 
+                myFrame.mainMenuGUI();  //resets the screen info
+                state = 0;
+            }
             
         
             

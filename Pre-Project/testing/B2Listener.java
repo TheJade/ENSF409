@@ -13,6 +13,7 @@ public class B2Listener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 			System.out.println("2");
+			MainLoop.state = 2;
 
 	}
 

@@ -17,6 +17,12 @@ public class GUI extends JFrame{
 		super (title);
 		tree = treeIn;
 		//listener = new MyListener (this);
+		
+		
+	}
+
+	public void treeInput()	{
+		tree.destroy();
 		txtName= JOptionPane.showInputDialog("Please enter file name (i.e. input.txt):");
 
 		new Reader();
@@ -25,7 +31,6 @@ public class GUI extends JFrame{
 		//setLayout(new BorderLayout());
 		
 		mainMenuGUI();
-		
 	}
 
 	public void mainMenuGUI(){
@@ -120,6 +125,11 @@ public class GUI extends JFrame{
 	//	GUI myFrame = new GUI ("My Frame with Listener Classes");
 	//	myFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	//}
+
+	public void findGUI(){
+
+		txtName= JOptionPane.showInputDialog("Please enter student id (i.e. 66002):");
+	}
 	
 
 }

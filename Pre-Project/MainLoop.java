@@ -3,6 +3,8 @@ import javax.swing.*;
 
 public class MainLoop {
     
+    BinSearchTree tree;
+
     public static void main (String [] args) {
 		
         //try
@@ -21,9 +23,9 @@ public class MainLoop {
         //catch (IllegalAccessException e) {
         //   // handle exception
         //}
+            BinSearchTree tree = new BinSearchTree();
         
-        
-            GUI myFrame = new GUI ("My Frame with Listener Classes");
+            GUI myFrame = new GUI("Home Menu", tree);
             myFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         }
 

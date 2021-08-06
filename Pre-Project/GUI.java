@@ -11,11 +11,14 @@ public class GUI extends JFrame{
 
 	String txtName;
 	
-	public GUI (String title) {
+	public GUI (String title, BinSearchTree tree ) {
 		super (title);
 		//listener = new MyListener (this);
-		txtName= JOptionPane.showInputDialog("Please enter file name with extension:");
+		txtName= JOptionPane.showInputDialog("Please enter file name (i.e. input.txt):");
 
+		new Reader();
+		
+		Reader.readFile(txtName, tree);
 		//setLayout(new BorderLayout());
 
 		p = new JPanel(new GridBagLayout());
@@ -50,29 +53,29 @@ public class GUI extends JFrame{
 		
 		
 	}
-	public static void main (String [] args) {
-		
-	//try
-	//{	
-	//	UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-	//} 
-    //catch (UnsupportedLookAndFeelException e) {
-    //   // handle exception
-    //}
-    //catch (ClassNotFoundException e) {
-    //   // handle exception
-    //}
-    //catch (InstantiationException e) {
-    //   // handle exception
-    //}
-    //catch (IllegalAccessException e) {
-    //   // handle exception
-    //}
-	
-	
-		GUI myFrame = new GUI ("My Frame with Listener Classes");
-		myFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-	}
+	//public static void main (String [] args) {
+	//	
+	////try
+	////{	
+	////	UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+	////} 
+    ////catch (UnsupportedLookAndFeelException e) {
+    ////   // handle exception
+    ////}
+    ////catch (ClassNotFoundException e) {
+    ////   // handle exception
+    ////}
+    ////catch (InstantiationException e) {
+    ////   // handle exception
+    ////}
+    ////catch (IllegalAccessException e) {
+    ////   // handle exception
+    ////}
+	//
+	//
+	//	GUI myFrame = new GUI ("My Frame with Listener Classes");
+	//	myFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+	//}
 	
 
 }

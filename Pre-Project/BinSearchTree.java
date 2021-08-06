@@ -134,7 +134,7 @@ class BinSearchTree {
 	 */
 	public void print_tree(Node cur, PrintWriter out) throws IOException {
 		if (cur.left!=null)
-			print_tree(cur.left,out);
+			print_tree(cur.left, out);
 		String s = cur.data.id+"        "+cur.data.faculty+"     "+
                                  cur.data.major+ "       "+cur.data.year + "\n";
 		out.println(s);

@@ -128,7 +128,21 @@ public class GUI extends JFrame{
 
 	public void findGUI(){
 
-		txtName= JOptionPane.showInputDialog("Please enter student id (i.e. 66002):");
+		String idName= JOptionPane.showInputDialog("Please enter student id (i.e. 66002):");
+
+		try{
+			Node root = tree.getRoot();
+			Node found = tree.find(root, idName);
+			JFrame frame = new JFrame("Student Info"); 
+			JLabel label = new JLabel(found.toString());
+			frame.add(label);
+
+			frame.setVisible(true);
+		}
+		catch (Exception e){
+			System.out.println("An error occurred.");
+            e.printStackTrace();
+		}
 	}
 	
 

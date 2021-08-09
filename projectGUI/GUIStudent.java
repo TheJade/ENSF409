@@ -41,6 +41,9 @@ public class GUIStudent extends JFrame{
             else if (state[0] == 3){
                 test.classesTaken();
             }
+            else if (state[0] == 4){
+                test.catalogueGUI();
+            }
             
         }
         
@@ -107,9 +110,10 @@ public class GUIStudent extends JFrame{
 			add(scrollPane);
 
             setVisible(true);
-			setBounds(300,300, 300,200);
+			setBounds(300,300, 300, 200);
 
             b1.addActionListener(new B1Listener(state));
+            b2.addActionListener(new B2Listener(state));
 
             
 
@@ -172,7 +176,61 @@ public class GUIStudent extends JFrame{
         }
     }
 
-    // can add a another frame for course catalogue
+    public void catalogueGUI(){ //can't figure out how to close a frame
+        
+    
+        try {
+            setVisible(false);  //hides mainMenu
+            JFrame f = new JFrame("Course Catalogue"); //student is created
+            f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            JButton b2, b4;
+            JPanel p1, p2;
+            
+			b2 = new JButton ("Back");
+            b4 = new JButton ("Register for Class");
+
+            p1 = new JPanel(new GridBagLayout());    //test
+            p2 = new JPanel(new GridBagLayout());    //test
+            GridBagConstraints c = new GridBagConstraints();
+
+            c.insets = new Insets(10, 10, 10, 10);
+			c.gridx = 0;
+			c.gridy = 1;
+			p1.add(b2, c); 
+            c.gridx = 1;
+			c.gridy = 1;
+			p1.add(b4, c); 
+
+            f.add(p1, BorderLayout.SOUTH);
+
+
+            JLabel label1 = new JLabel("Classes available: ");
+
+            c.insets = new Insets(3, 3, 3, 3);
+            c.gridx = 0;
+			c.gridy = 0;  
+			p2.add(label1, c);
+
+            f.add(p2, BorderLayout.NORTH);
+
+            JTextArea area = new JTextArea("STRING OF CLASSES AVAILABLE");
+            area.setEditable(false);
+            JScrollPane scrollPane = new JScrollPane(area);	
+			f.add(scrollPane);
+
+            f.setVisible(true);
+			f.setBounds(300,300, 300,200);
+
+            b2.addActionListener(new B3Listener(state, f));
+            b4.addActionListener(new B4Listener());
+
+            GUIStudent.state[0] = 0;
+        }
+        catch (Exception e){
+            System.out.println("Student name not found");
+            e.printStackTrace();
+        }
+    }
 
 
 }

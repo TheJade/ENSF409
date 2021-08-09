@@ -4,7 +4,8 @@ import java.io.*;
 
 
 /**
- * This class contains the methods used to produce the GUI for the user
+ * Run this class's main on it's own to demo the GUI functionality,
+ * This class contains all the code building the frames of the GUI, the Listeners are in their own separate class though
  * 
  * @author Tsenguun Ulambayar, Jade Fjestad
  * @since August 5th, 2021
@@ -21,6 +22,9 @@ public class GUIStudent extends JFrame{
         //can add the data here
     }
 
+    /**
+     * main loop this controls the current state of the GUI program
+     */
     public static void main(String[] args){
         // this while (true) will be replicated in the client 
         GUIStudent test = new GUIStudent(); //student is created
@@ -49,6 +53,9 @@ public class GUIStudent extends JFrame{
         
     }
 
+    /**
+     * This state acts as the login page for the students
+     */
     public String studentNameInput(){    //starts with this
         try{
             String studentName= JOptionPane.showInputDialog("Please enter your full name or student id: ");
@@ -64,6 +71,10 @@ public class GUIStudent extends JFrame{
         }
     }
 
+    /**
+     * The mainMenu state is the home page and all other frames come from and come back to the mainMenu
+     * 
+     */
     public void mainMenu(){
         
         
@@ -125,7 +136,10 @@ public class GUIStudent extends JFrame{
         }
     }
 
-    public void classesTaken(){ //can't figure out how to close a frame
+    /**
+     * This frame lists classes taken by the student, to help with registration pre-requisite requirements for registering for courses
+     */
+    public void classesTaken(){ //can't figure out how to close a frame, i figured it out
         
     
         try {
@@ -175,8 +189,11 @@ public class GUIStudent extends JFrame{
             e.printStackTrace();
         }
     }
-
-    public void catalogueGUI(){ //can't figure out how to close a frame
+    
+    /**
+     * provides a list of the classes available to take for the student, also provides a back button and button to register of the class
+     */
+    public void catalogueGUI(){ //can't figure out how to close a frame, figured it out
         
     
         try {
